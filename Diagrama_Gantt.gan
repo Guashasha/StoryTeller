@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Storyteller" company="uv" webLink="http://" view-date="2024-09-20" view-index="0" gantt-divider-location="668" resource-divider-location="300" version="3.3.3309" locale="en_US">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Name" width="220" order="0"/>
+        <field id="tpd4" name="Begin date" width="102" order="1"/>
+        <field id="tpd5" name="End date" width="86" order="2"/>
+        <field id="tpd10" name="ID" width="42" order="3"/>
+        <field id="tpd7" name="Completion" width="63" order="4"/>
+        <field id="tpd8" name="Coordinator" width="139" order="5"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="mx">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="1" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="1" date="1" type="HOLIDAY"><![CDATA[New Year's Day]]></date>
+        <date year="" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="" month="9" date="16" type="HOLIDAY"><![CDATA[Independence Day]]></date>
+        <date year="" month="11" date="1" type="NEUTRAL"><![CDATA[All Saints Day]]></date>
+        <date year="" month="11" date="2" type="NEUTRAL"><![CDATA[Day of the Dead]]></date>
+        <date year="" month="12" date="12" type="HOLIDAY"><![CDATA[Day of the Virgin of Guadalupe]]></date>
+        <date year="" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2022" month="2" date="7" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2022" month="3" date="21" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday]]></date>
+        <date year="2022" month="4" date="14" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2022" month="4" date="15" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2022" month="11" date="21" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2016" month="2" date="1" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2016" month="3" date="14" type="HOLIDAY"><![CDATA[Birthday of Benito Juárez]]></date>
+        <date year="2016" month="3" date="24" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2016" month="3" date="25" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2016" month="11" date="21" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2017" month="1" date="2" type="HOLIDAY"><![CDATA[New Year's Holiday]]></date>
+        <date year="2017" month="2" date="6" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2017" month="3" date="20" type="HOLIDAY"><![CDATA[Day off for Benito Juárez's Birthday Memorial]]></date>
+        <date year="2017" month="3" date="21" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday Memorial]]></date>
+        <date year="2017" month="4" date="13" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2017" month="4" date="14" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2017" month="11" date="20" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2018" month="2" date="5" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2018" month="3" date="19" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday]]></date>
+        <date year="2018" month="3" date="29" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2018" month="3" date="30" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2018" month="11" date="19" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2018" month="12" date="1" type="HOLIDAY"><![CDATA[New President of Mexico]]></date>
+        <date year="2019" month="2" date="4" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2019" month="3" date="18" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday]]></date>
+        <date year="2019" month="4" date="18" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2019" month="4" date="19" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2019" month="11" date="18" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2020" month="2" date="3" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2020" month="3" date="16" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday]]></date>
+        <date year="2020" month="4" date="9" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2020" month="4" date="10" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2020" month="11" date="16" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+        <date year="2021" month="2" date="1" type="HOLIDAY"><![CDATA[Constitution Day]]></date>
+        <date year="2021" month="3" date="15" type="HOLIDAY"><![CDATA[Benito Juárez's Birthday]]></date>
+        <date year="2021" month="4" date="1" type="HOLIDAY"><![CDATA[Maundy Thursday]]></date>
+        <date year="2021" month="4" date="2" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2021" month="11" date="16" type="HOLIDAY"><![CDATA[Revolution Day]]></date>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="42" uid="f744587a5e50460786951edb183b5061" name="Storyteller" meeting="false" start="2024-09-02" duration="50" complete="35" expand="true">
+            <task id="43" uid="70480f77b7b54f4f98b5dc59972486f1" name="Administración" meeting="false" start="2024-09-02" duration="50" complete="35" expand="true">
+                <task id="44" uid="b13a1d7be3f1492c9488077b5b07cace" name="Definición" meeting="false" start="2024-09-02" duration="5" complete="100" expand="true">
+                    <depend id="45" type="2" difference="0" hardness="Strong"/>
+                    <depend id="49" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="49" uid="41ed3e0f7ef943d1bfe5bf5206d2a764" name="Acta constitutiva" meeting="true" start="2024-09-10" duration="0" complete="100" expand="true"/>
+                <task id="45" uid="60c8ada476dc48f083b3a38a39d5062a" name="Planeación" meeting="false" start="2024-09-10" duration="10" complete="100" expand="true">
+                    <depend id="46" type="2" difference="0" hardness="Strong"/>
+                    <depend id="50" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="50" uid="792c403db7464b03aeebe8efb76e94a9" name="Plan de trabajo" meeting="true" start="2024-09-30" duration="0" complete="100" expand="true"/>
+                <task id="46" uid="2ce8215cda994a98aea45418b6af4230" name="Ejecución" meeting="false" start="2024-09-30" duration="25" complete="10" expand="true">
+                    <depend id="47" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="47" uid="2ef688c97c8e44b1850186d57fcdcbc2" name="Cierre" meeting="false" start="2024-11-12" duration="10" complete="0" expand="true"/>
+            </task>
+            <task id="0" uid="b1caa15e86024365a63036b61f39793c" name="Diseño de prototipos" meeting="false" start="2024-09-23" duration="4" complete="100" expand="true">
+                <task id="1" uid="dd7d6ddaa1404c63bd831bc0b61a6e65" name="Hacer arquitectura de la información" meeting="false" start="2024-09-23" duration="2" complete="100" expand="true">
+                    <depend id="2" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="2" uid="b7790e396b8e43abb47c33c13b55c50e" name="Generar sketch" meeting="false" start="2024-09-25" duration="2" complete="100" expand="true">
+                    <depend id="3" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="3" uid="dc8231dce4644392a93afbbfd72c31ad" name="Generar flujo de comportamiento" meeting="false" start="2024-09-25" duration="2" complete="100" expand="true"/>
+                <task id="4" uid="83bbb30d564941849bb0a508cd164f2e" name="Creación de prototipos de baja fidelidad" meeting="false" start="2024-09-25" duration="2" complete="100" expand="true">
+                    <depend id="33" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="33" uid="6568f79476554ab7ae04ea2f6d51f2bf" name="Prototipos de baja fidelidad completos" meeting="true" start="2024-09-30" duration="0" complete="100" expand="true"/>
+            </task>
+            <task id="5" uid="84956ed155624678bc953199d796eca2" name="Detallado de prototipos" meeting="false" start="2024-09-30" duration="4" complete="100" expand="true">
+                <depend id="34" type="2" difference="0" hardness="Strong"/>
+                <task id="6" uid="0df53438c8c842b9aacfc8a1b5207873" name="Creación de mensajes de error" meeting="false" start="2024-09-30" duration="1" complete="100" expand="true">
+                    <depend id="7" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="7" uid="be256f51f0dd439dae7470f55cf4b2b6" name="Creación de prototipos de alta fidelidad" meeting="false" start="2024-09-30" duration="4" complete="100" expand="true">
+                    <depend id="8" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="8" uid="87b89cc963ac40af82fb493b60d1d58f" name="Conectar prototipos" meeting="false" start="2024-09-30" duration="4" complete="100" expand="true"/>
+            </task>
+            <task id="9" uid="077ae0305a18428189ce694643467828" name="Definición del estándar de codificación" meeting="false" start="2024-09-30" duration="4" complete="100" expand="true">
+                <depend id="34" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="34" uid="2343abb0d34c4fa287fa482838ac5761" name="Prototipos de alta fidelidad y estándar completos" meeting="true" start="2024-10-07" duration="0" complete="100" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" uid="36994e06b8634982b7b40541dff62652" name="Modelado del sistema" meeting="false" start="2024-10-07" duration="4" complete="0" expand="true">
+                <task id="11" uid="f98c8df7711f402cbefe59e580721bd7" name="Modelo de dominio" meeting="false" start="2024-10-07" duration="1" complete="0" expand="true"/>
+                <task id="12" uid="f67a5327deb043d39e3c13c2eabcff7d" name="Modelo de datos" meeting="false" start="2024-10-07" duration="2" complete="0" expand="true"/>
+                <task id="13" uid="090ca8cb9f94431c908c947b43713c8c" name="Programar arquitectura" meeting="false" start="2024-10-10" duration="1" complete="0" expand="true">
+                    <depend id="35" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="35" uid="ac69ca3521e94c3bb3c2ed54a8fa296e" name="Modelos de dominio y datos completos" meeting="true" start="2024-10-14" duration="0" complete="0" expand="true"/>
+            </task>
+            <task id="14" uid="503cf09fdf5743398a5ec917367c67cd" name="Primer caso de uso" meeting="false" start="2024-10-14" duration="4" complete="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+                <depend id="37" type="2" difference="0" hardness="Strong"/>
+                <task id="15" uid="9657ea6554244bb6ac266cfe189ed769" name="Codificación de interfaces gráficas" meeting="false" start="2024-10-14" duration="2" complete="0" expand="true">
+                    <depend id="17" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="16" uid="0e403bec074f45c49b88483090ead3eb" name="Codificación de funcionalidad" meeting="false" start="2024-10-14" duration="2" complete="0" expand="true">
+                    <depend id="17" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="17" uid="1ee9d410090346459f6dc1860654d7f3" name="Realización de pruebas" meeting="false" start="2024-10-16" duration="1" complete="0" expand="true">
+                    <depend id="18" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="18" uid="b8a51bbe883146ebb7122d6912791336" name="Corrección de errores" meeting="false" start="2024-10-16" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="37" uid="8e25b82070214e1694907be6a776e64f" name="Primer caso de uso funcional" meeting="true" start="2024-10-21" duration="0" complete="0" expand="true"/>
+            <task id="19" uid="8cf24882cab14cf1a5699682f5df6bee" name="Segundo caso de uso" meeting="false" start="2024-10-21" duration="4" complete="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+                <depend id="38" type="2" difference="0" hardness="Strong"/>
+                <task id="20" uid="15c4495627354daea05f81affa1d2362" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="0" expand="true">
+                    <depend id="22" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="21" uid="e94fecad8eab42639ccc33f4e43bfdf8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="0" expand="true">
+                    <depend id="22" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="22" uid="4c1a3064a85741e0a587e6ee3200e3f8" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-23" duration="1" complete="0" expand="true">
+                    <depend id="23" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="23" uid="872effc5437245c2bdfb47b957385156" name="Corrección de errores" color="#8cb6ce" meeting="false" start="2024-10-23" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="38" uid="8a42eda4546c43b782b0b724e3249353" name="Segundo caso de uso funcional" meeting="true" start="2024-10-28" duration="0" complete="0" expand="true"/>
+            <task id="24" uid="9d2e2d88acad4e62b4a7a79a5fe742a1" name="Tercer caso de uso" meeting="false" start="2024-10-28" duration="4" complete="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+                <task id="25" uid="779ca7516aa34c84bcb0a1a3c0c746d4" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="0" expand="true">
+                    <depend id="27" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="26" uid="ba232ca8537b4b42ab6b08155139b3a8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="0" expand="true">
+                    <depend id="27" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="27" uid="967f0030bfaa453b874237c6589a0ec9" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-30" duration="1" complete="0" expand="true">
+                    <depend id="28" type="1" difference="0" hardness="Strong"/>
+                </task>
+                <task id="28" uid="43c66df8322841b89f56224f2cf8b2b3" name="Corrección de errores" color="#8cb6ce" meeting="false" start="2024-10-30" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="39" uid="b58db776280e4cb58afd1650d475e952" name="Tercer caso de uso funcional" meeting="true" start="2024-11-04" duration="0" complete="0" expand="true"/>
+            <task id="29" uid="0c180940609a4062937d0ff27013c45b" name="Pruebas de integración" meeting="false" start="2024-11-04" duration="4" complete="0" expand="true">
+                <depend id="30" type="2" difference="0" hardness="Strong"/>
+                <depend id="40" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="40" uid="94a52d6f768e4961921be3d92e6c854a" name="Lista de errores encotrados" meeting="true" start="2024-11-11" duration="0" complete="0" expand="true"/>
+            <task id="30" uid="366de63cb04d4f88b8c04fd5b49bf0a3" name="Corrección de errores" meeting="false" start="2024-11-11" duration="4" complete="0" expand="true"/>
+            <task id="32" uid="b22d5a1ccd674355b10958f372714433" name="Redacción acta de entrega" meeting="false" start="2024-11-18" duration="4" complete="0" expand="true">
+                <depend id="31" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="31" uid="4a72138b6a1244fcac260d2fc22cb677" name="Entrega" meeting="true" start="2024-11-25" duration="0" complete="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Zaid" function="Default:1" contacts="" phone="">
+            <rate name="standard" value="140"/>
+        </resource>
+        <resource id="1" name="Juan David" function="4" contacts="" phone="">
+            <rate name="standard" value="140"/>
+        </resource>
+        <resource id="2" name="David" function="5" contacts="" phone="">
+            <rate name="standard" value="140"/>
+        </resource>
+    </resources>
+    <allocations>
+        <allocation task-id="1" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="32" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="25" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="30" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="16" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="22" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="1" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="32" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="30" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="4" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="27" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="2" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="32" resource-id="2" function="5" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous>
+        <previous-tasks name="Primera linea base proyecto">
+            <previous-task id="42" start="2024-09-02" duration="50" meeting="false" super="true"/>
+            <previous-task id="43" start="2024-09-02" duration="50" meeting="false" super="true"/>
+            <previous-task id="44" start="2024-09-02" duration="5" meeting="false" super="false"/>
+            <previous-task id="49" start="2024-09-10" duration="0" meeting="true" super="false"/>
+            <previous-task id="45" start="2024-09-10" duration="10" meeting="false" super="false"/>
+            <previous-task id="50" start="2024-09-30" duration="0" meeting="true" super="false"/>
+            <previous-task id="46" start="2024-09-30" duration="25" meeting="false" super="false"/>
+            <previous-task id="47" start="2024-11-12" duration="10" meeting="false" super="false"/>
+            <previous-task id="0" start="2024-09-23" duration="4" meeting="false" super="true"/>
+            <previous-task id="1" start="2024-09-23" duration="2" meeting="false" super="false"/>
+            <previous-task id="2" start="2024-09-25" duration="2" meeting="false" super="false"/>
+            <previous-task id="3" start="2024-09-25" duration="2" meeting="false" super="false"/>
+            <previous-task id="4" start="2024-09-25" duration="2" meeting="false" super="false"/>
+            <previous-task id="33" start="2024-09-30" duration="0" meeting="true" super="false"/>
+            <previous-task id="5" start="2024-09-30" duration="4" meeting="false" super="true"/>
+            <previous-task id="6" start="2024-09-30" duration="1" meeting="false" super="false"/>
+            <previous-task id="7" start="2024-09-30" duration="4" meeting="false" super="false"/>
+            <previous-task id="8" start="2024-09-30" duration="4" meeting="false" super="false"/>
+            <previous-task id="9" start="2024-09-30" duration="4" meeting="false" super="false"/>
+            <previous-task id="34" start="2024-10-07" duration="0" meeting="true" super="false"/>
+            <previous-task id="10" start="2024-10-07" duration="4" meeting="false" super="true"/>
+            <previous-task id="11" start="2024-10-07" duration="1" meeting="false" super="false"/>
+            <previous-task id="12" start="2024-10-07" duration="2" meeting="false" super="false"/>
+            <previous-task id="13" start="2024-10-10" duration="1" meeting="false" super="false"/>
+            <previous-task id="35" start="2024-10-14" duration="0" meeting="true" super="false"/>
+            <previous-task id="14" start="2024-10-14" duration="4" meeting="false" super="true"/>
+            <previous-task id="15" start="2024-10-14" duration="2" meeting="false" super="false"/>
+            <previous-task id="16" start="2024-10-14" duration="2" meeting="false" super="false"/>
+            <previous-task id="17" start="2024-10-16" duration="1" meeting="false" super="false"/>
+            <previous-task id="18" start="2024-10-16" duration="2" meeting="false" super="false"/>
+            <previous-task id="37" start="2024-10-21" duration="0" meeting="true" super="false"/>
+            <previous-task id="19" start="2024-10-21" duration="4" meeting="false" super="true"/>
+            <previous-task id="20" start="2024-10-21" duration="2" meeting="false" super="false"/>
+            <previous-task id="21" start="2024-10-21" duration="2" meeting="false" super="false"/>
+            <previous-task id="22" start="2024-10-23" duration="1" meeting="false" super="false"/>
+            <previous-task id="23" start="2024-10-23" duration="2" meeting="false" super="false"/>
+            <previous-task id="38" start="2024-10-28" duration="0" meeting="true" super="false"/>
+            <previous-task id="24" start="2024-10-28" duration="4" meeting="false" super="true"/>
+            <previous-task id="25" start="2024-10-28" duration="2" meeting="false" super="false"/>
+            <previous-task id="26" start="2024-10-28" duration="2" meeting="false" super="false"/>
+            <previous-task id="27" start="2024-10-30" duration="1" meeting="false" super="false"/>
+            <previous-task id="28" start="2024-10-30" duration="2" meeting="false" super="false"/>
+            <previous-task id="39" start="2024-11-04" duration="0" meeting="true" super="false"/>
+            <previous-task id="29" start="2024-11-04" duration="4" meeting="false" super="false"/>
+            <previous-task id="40" start="2024-11-11" duration="0" meeting="true" super="false"/>
+            <previous-task id="30" start="2024-11-11" duration="4" meeting="false" super="false"/>
+            <previous-task id="32" start="2024-11-18" duration="4" meeting="false" super="false"/>
+            <previous-task id="31" start="2024-11-25" duration="0" meeting="true" super="false"/>
+        </previous-tasks>
+    </previous>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="david"/>
+        <role id="2" name="juan"/>
+        <role id="3" name="zaid"/>
+        <role id="4" name="Diseñador frontend"/>
+        <role id="5" name="Desarrollador"/>
+    </roles>
+</project>
