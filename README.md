@@ -29,3 +29,13 @@ ofreció su casa. Aunque no era mucho, era todo para el ojo.
 Los magos del norte estaban inconformes con los magos del sur, ya que ellos eran más poderosos y poseían más territorio. Así que decidieron atacar al rey William, un mago de más de 6000 años que no pudo defenderse al ser tocado por 
 la espada. Su hijo Rugart asumió el trono. Enfureció al enterase de quién asesinó a su padre. Estalló medio planeta con 
 una poderosa llama de fuego. Por eso la magia terminó.
+
+## El elefante pantalones
+El elefante don Luis podaba el pasto cuando de pronto pasó una 
+cebra vendiendo pantalones. Se los quiso probar pero ninguno le quedaba. Entonces hizo un enorme berrinche, tan enorme 
+como él y se tiró al piso y se arrastró por todo el lugar.
+Los animales estaban muy asustados. Pero la cebra le 
+dijo que la siguiente semana pasaría con nuevos modelos y 
+tallas más grandes. Esperó ansioso a la siguiente semana que 
+volvió a pasar. Feliz, el elefante se probó tres y le quedaron 
+súper bien.
