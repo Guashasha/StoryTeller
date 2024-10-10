@@ -57,3 +57,15 @@ crashlytics.properties
 crashlytics-build.properties
 
 # Created by .ignore support plugin (hsz.mobi)
+/build/
+/dist/
+/lib/
+/logs/
+/nbproject/project.xml
+/nbproject/project.properties
+/nbproject/private/private.xml
+/nbproject/private/private.properties
+/nbproject/build-impl.xml
+/nbproject/genfiles.properties
+manifest.mf
+build.xml
