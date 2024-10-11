@@ -1,26 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package storyteller.view;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
-/**
- * FXML Controller class
- *
- * @author zaido
- */
-public class StartController implements Initializable {
+public class StartController {
+    @FXML
+    private Button btnLearnedWords;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    public void helloWorld() {
+        System.out.println("Hello world");
+    }
 }
