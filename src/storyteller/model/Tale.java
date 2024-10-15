@@ -5,9 +5,15 @@ package storyteller.model;
  * @author zaido
  */
 public class Tale {
+    private int id;
     private String title;
     private String spanishText;
     private State state;
+    
+    public Tale(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 
     public String getTitle() {
         return title;
