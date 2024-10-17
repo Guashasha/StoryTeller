@@ -11,10 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("storyteller/view/Start.fxml"));
-        System.out.println(getClass().getResource("/src/storyteller/view/Start.fxml"));
-
         try {
+            FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("storyteller/view/Start.fxml"));
+
             Parent root = guiLoader.load();
             Scene scene = new Scene(root);
             stage.setTitle("Storyteller");

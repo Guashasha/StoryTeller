@@ -9,7 +9,7 @@
    <children>
       <AnchorPane prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
       <AnchorPane layoutY="954.0" prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
-      <Button fx:id="btnLearnedWords" layoutX="234.0" layoutY="581.0" mnemonicParsing="false" onAction="#helloWorld" style="-fx-background-color: #FFB98D; -fx-border-radius: 8; -fx-background-radius: 9; -fx-border-color: #000000; -fx-border-width: 1;" text="Palabras aprendidas">
+      <Button fx:id="btnLearnedWords" layoutX="234.0" layoutY="581.0" mnemonicParsing="false" onAction="#goToLearnedWords" style="-fx-background-color: #FFB98D; -fx-border-radius: 8; -fx-background-radius: 9; -fx-border-color: #000000; -fx-border-width: 1;" text="Palabras aprendidas">
          <font>
             <Font size="20.0" />
          </font>
@@ -21,7 +21,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <VBox layoutX="20.0" layoutY="156.0" maxHeight="560.0" maxWidth="765.0" minHeight="560.0" minWidth="765.0" prefHeight="560.0" prefWidth="765.0" style="-fx-background-color: #FFDABA;" />
+            <VBox fx:id="TalesVBox" layoutX="20.0" layoutY="156.0" maxHeight="560.0" maxWidth="765.0" minHeight="560.0" minWidth="765.0" prefHeight="560.0" prefWidth="765.0" style="-fx-background-color: #FFDABA;" />
             <Button layoutX="710.0" layoutY="101.0" mnemonicParsing="false" style="-fx-background-color: FFB98D;" text="Filtro">
                <font>
                   <Font size="20.0" />
