@@ -9,11 +9,16 @@ public class Tale {
     private String title;
     private String spanishText;
     private State state;
+    private Question question;
     
     public Tale(int id, String title) {
         this.id = id;
         this.title = title;
     }
+
+    public Question getQuestion() { return question; }
+
+    public void setQuestion(Question question) { this.question = question; }
 
     public String getTitle() {
         return title;
