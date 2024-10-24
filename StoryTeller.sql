@@ -1,25 +1,25 @@
 CREATE TABLE `Cuento` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `titulo` string NOT NULL,
-  `texto_español` string NOT NULL,
-  `completado` bool NOT NULL
+  `titulo` varchar(100) NOT NULL,
+  `texto_espanol` mediumtext NOT NULL,
+  `completado` tinyint(1) DEFAULT 0 NOT NULL
 );
 
 CREATE TABLE `Palabra` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `id_cuento` int,
-  `palabra_espanol` string NOT NULL,
-  `palabra_ingles` string NOT NULL
+  `palabra_espanol` varchar(30) NOT NULL,
+  `palabra_ingles` varchar(30) NOT NULL
 );
 
 CREATE TABLE `Pregunta` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `id_cuento` int,
-  `pregunta_español` string NOT NULL,
-  `pregunta_ingles` string NOT NULL,
-  `respuesta` int,
-  `lenguaje_respuesta` enum(espanol,ingles),
-  `contestada` bool NOT NULL
+  `pregunta_espanol` varchar(30) NOT NULL,
+  `pregunta_ingles` varchar(30) NOT NULL,
+  `respuesta` varchar(30) NOT NULL,
+  `lenguaje_respuesta` enum('espanol','ingles'),
+  `contestada` tinyint(1) DEFAULT 0 NOT NULL
 );
 
 ALTER TABLE `Palabra` ADD FOREIGN KEY (`id_cuento`) REFERENCES `Cuento` (`id`);

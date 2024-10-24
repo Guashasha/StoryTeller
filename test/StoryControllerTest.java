@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-import storyteller.model.Tale;
+import storyteller.model.pojo.Tale;
 import storyteller.controller.StoryController;
 
 /**
@@ -38,7 +38,7 @@ public class StoryControllerTest {
         List<Tale> unreadTales = controller.getUnreadTales();
         List<Tale> unreadTalesExpected = Arrays.asList(
                 new Tale(1, "The magical tree"),
-                new Tale(2, "Why does the dragon got depressed"),
+                new Tale(2, "Why did the dragon get depressed"),
                 new Tale(3, "Friendship tale"),
                 new Tale(4, "The homeless eye"),
                 new Tale(5, "The magician's world war"),
@@ -52,7 +52,7 @@ public class StoryControllerTest {
         List<Tale> readTales = controller.getReadTales();
         List<Tale> readTalesExpected = Arrays.asList(
                 new Tale(1, "The magical tree"),
-                new Tale(2, "Why does the dragon got depressed"),
+                new Tale(2, "Why did the dragon get depressed"),
                 new Tale(3, "Friendship tale"),
                 new Tale(4, "The homeless eye"),
                 new Tale(5, "The magician's world war"),

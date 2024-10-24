@@ -1,5 +1,12 @@
-package storyteller.view;
+package storyteller.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Random;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -7,7 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import storyteller.model.Tale;
+import storyteller.model.ConnectionDB;
+import storyteller.model.pojo.Tale;
 
 public class ReadTale {
     @FXML
@@ -32,8 +40,8 @@ public class ReadTale {
         this.titleTxt.setText(tale.getTitle());
         this.contentTxt.setText(tale.getSpanishText());
         this.questionTxt.setText(tale.getQuestion().getSpanishQuestion());
-        String randomSpanishWord = obtainWord(tale.getSpanishText);
-        loadEnglishWords(randomSpanishWord, translateWord(randomSpanishWord), tale.getSpanishText);
+        String randomSpanishWord = obtainWord(tale.getSpanishText());
+        loadEnglishWords(randomSpanishWord, translateWord(randomSpanishWord), tale.getSpanishText());
     }
     
     private void loadEnglishWords(String esWord, String enWord, String tale){
@@ -59,4 +67,5 @@ public class ReadTale {
     private void goBack() {
         System.out.println("hola mundo");
     }
+    
 }
