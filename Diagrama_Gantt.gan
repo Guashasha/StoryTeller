@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Storyteller" company="uv" webLink="http://" view-date="2024-10-10" view-index="0" gantt-divider-location="569" resource-divider-location="300" version="3.3.3309" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Storyteller" company="uv" webLink="http://" view-date="2024-10-06" view-index="0" gantt-divider-location="554" resource-divider-location="300" version="3.3.3309" locale="es_ES">
     <description/>
     <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="185" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="88" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="72" order="2"/>
-        <field id="tpd10" name="Id." width="35" order="3"/>
-        <field id="tpd7" name="Progreso" width="55" order="4"/>
-        <field id="tpd8" name="Coordinador" width="118" order="5"/>
+        <field id="tpd3" name="Nombre" width="180" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="86" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="70" order="2"/>
+        <field id="tpd10" name="Id." width="34" order="3"/>
+        <field id="tpd7" name="Progreso" width="54" order="4"/>
+        <field id="tpd8" name="Coordinador" width="115" order="5"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
