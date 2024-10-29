@@ -1,5 +1,7 @@
 package storyteller.model;
 
+import storyteller.model.pojo.Question;
+
 /**
  *
  * @author zaido

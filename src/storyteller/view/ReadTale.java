@@ -32,8 +32,8 @@ public class ReadTale {
         this.titleTxt.setText(tale.getTitle());
         this.contentTxt.setText(tale.getSpanishText());
         this.questionTxt.setText(tale.getQuestion().getSpanishQuestion());
-        String randomSpanishWord = obtainWord(tale.getSpanishText);
-        loadEnglishWords(randomSpanishWord, translateWord(randomSpanishWord), tale.getSpanishText);
+        String randomSpanishWord = obtainWord(tale.getSpanishText());
+        loadEnglishWords(randomSpanishWord, translateWord(randomSpanishWord), tale.getSpanishText());
     }
     
     private void loadEnglishWords(String esWord, String enWord, String tale){
