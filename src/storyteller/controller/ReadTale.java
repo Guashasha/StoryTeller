@@ -41,6 +41,7 @@ public class ReadTale {
     // translate the story content to the selected language
     // 0 for spanish
     // 1 for english
+    @FXML
     private void translateTale(int language){
         Word answers = this.tale.getQuestion().getQuestionAnswer();
         String englishWord = answers.getEnglishWord();
@@ -63,6 +64,7 @@ public class ReadTale {
         contentTxt.setText(translatedTale);
     }
 
+    @FXML
     private void answerQuestion() {
         String correctAnswer = tale.getQuestion().getQuestionAnswer().getEnglishWord();
         String userAnswer = answerTf.getText().trim();
@@ -75,7 +77,8 @@ public class ReadTale {
             Utils.showSimpleAlert("incorrecto", "La repuesta no es correcta, intenta nuevamente.", Alert.AlertType.ERROR);
         }
     }
-    
+
+    @FXML
     private void goBack() {
         System.out.println("hola mundo");
     }
