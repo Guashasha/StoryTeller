@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import storyteller.model.ConnectionDB;
+import storyteller.model.pojo.State;
 
 public class StartController {
     @FXML
@@ -34,7 +35,7 @@ public class StartController {
     }
     
     private void obtainTales(){
-        tales = (ArrayList<Tale>)TaleDAO.getTales().get("tales");
+        tales = (ArrayList<Tale>)getTales().get("tales");
     }
 
     private void generateTaleButtons() {
@@ -72,19 +73,21 @@ public class StartController {
         if(conexionBD != null){
             try {
                 //TODO sentencia sql de consulta
-                String consulta = "SELECT e.idEstudiante, e.nombre, e.apellidoPaterno, e.apellidoMaterno, e.matricula " +
-                    "FROM estudiante e " +
-                    "JOIN participacion p ON e.idEstudiante = p.idEstudiante " +
-                    "WHERE p.idColaboracionCOIL = ? " + 
-                    "ORDER BY apellidoPaterno ASC, apellidoMaterno ASC";
+                String consulta = "SELECT id, titulo, texto_espanol, completado FROM cuento";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
                 
                 ResultSet result = prepararSentencia.executeQuery();
                 
                 while(result.next()){
                     Tale tale = new Tale();
-                    tale.setId(result.getInt("idTale"));
-                    //todo
+                    tale.setId(result.getInt("id"));
+                    tale.setTitle(result.getString("titulo"));
+                    tale.setSpanishText(result.getString("texto_espanol"));
+                    if(result.getInt("completado") == 0){
+                        tale.setState(State.PENDING);
+                    }else{
+                        tale.setState(State.COMPLETED);
+                    }
                     
                     tales.add(tale);
                 }
@@ -95,7 +98,7 @@ public class StartController {
                 response.put("message", "Error: " + sqlex.getMessage());
             }
         }else{
-            response.put("message", "No hay conexion con la base de datos. Inténtelo de nuevo más tarde.");
+            response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
         }
         return response;
     }
