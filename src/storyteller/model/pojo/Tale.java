@@ -1,5 +1,6 @@
-package storyteller.model;
+package storyteller.model.pojo;
 
+import storyteller.model.pojo.State;
 import storyteller.model.pojo.Question;
 
 /**
@@ -13,14 +14,29 @@ public class Tale {
     private State state;
     private Question question;
     
+    public Tale(){
+    }
+    
     public Tale(int id, String title) {
         this.id = id;
         this.title = title;
     }
 
-    public Question getQuestion() { return question; }
+    public int getId() {
+        return id;
+    }
 
-    public void setQuestion(Question question) { this.question = question; }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
 
     public String getTitle() {
         return title;

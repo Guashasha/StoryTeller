@@ -1,13 +1,22 @@
-package storyteller.view;
+package storyteller.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Random;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import storyteller.model.Tale;
+import storyteller.model.ConnectionDB;
+import storyteller.model.pojo.Tale;
 
 public class ReadTale {
     @FXML
@@ -26,6 +35,8 @@ public class ReadTale {
     private Text questionTxt;
 
     private Stage stage;
+    @FXML
+    private Button goBackBtn;
 
     public void initialize(Tale tale) {
         this.stage = stage;
@@ -59,4 +70,21 @@ public class ReadTale {
     private void goBack() {
         System.out.println("hola mundo");
     }
+
+    @FXML
+    private void btnClickGoBack(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnClickAccept(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnClickSpanish(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnClickEnglish(ActionEvent event) {
+    }
+    
 }

@@ -146,6 +146,7 @@
                 <task id="15" uid="9657ea6554244bb6ac266cfe189ed769" name="Codificación de interfaces gráficas" meeting="false" start="2024-10-14" duration="2" complete="100" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                 </task>
+<<<<<<< HEAD
                 <task id="16" uid="0e403bec074f45c49b88483090ead3eb" name="Codificación de funcionalidad" meeting="false" start="2024-10-14" duration="2" complete="100" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                 </task>

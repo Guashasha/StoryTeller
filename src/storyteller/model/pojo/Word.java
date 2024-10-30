@@ -1,4 +1,4 @@
-package storyteller.model;
+package storyteller.model.pojo;
 
 /**
  *
