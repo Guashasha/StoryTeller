@@ -1,5 +1,8 @@
 package storyteller.model.pojo;
 
+import storyteller.model.pojo.State;
+import storyteller.model.pojo.Question;
+
 /**
  *
  * @author zaido
