@@ -88,11 +88,10 @@ public class StartController {
         ArrayList<Tale> tales = new ArrayList<>();
         if(conexionBD != null){
             try {
-                //TODO sentencia sql de consulta
-                String consulta = "SELECT id, titulo, texto_espanol, completado FROM cuento";
-                PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
+                String query = "SELECT id, titulo, texto_espanol, completado FROM cuento";
+                PreparedStatement preparedStatement = conexionBD.prepareStatement(query);
                 
-                ResultSet result = prepararSentencia.executeQuery();
+                ResultSet result = preparedStatement.executeQuery();
                 
                 while(result.next()){
                     Tale tale = new Tale();
