@@ -22,13 +22,13 @@ public class StartController {
 
     public void initialize(Stage stage) {
         this.stage = stage;
-        obtainTales();
+        //obtainTales();
         generateTaleButtons();
     }
     
-    private void obtainTales(){
+    /*private void obtainTales(){
         tales = (ArrayList<Tale>)TalesDAO.getTales().get("tales");
-    }
+    }*/
 
     private void generateTaleButtons() {
         for (Tale tale : tales) {

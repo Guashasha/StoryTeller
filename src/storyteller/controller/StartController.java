@@ -62,8 +62,24 @@ public class StartController {
     }
 
     public void goToLearnedWords() {
-        // TODO
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/storyteller/view/LearnedWords.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) btnLearnedWords.getScene().getWindow();
+            currentStage.close();
+
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.setTitle("Learned Words");
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     
     public static HashMap<String, Object> getTales(){
         HashMap<String, Object> response = new LinkedHashMap<>();
