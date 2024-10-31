@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import storyteller.model.ConnectionDB;
+import storyteller.model.pojo.State;
 import storyteller.model.pojo.Tale;
 
 public class ReadTale {
@@ -85,6 +86,33 @@ public class ReadTale {
 
     @FXML
     private void btnClickEnglish(ActionEvent event) {
+    }
+    
+    public static HashMap<String, Object> setTaleCompleted(int idTale){
+        HashMap<String, Object> response = new LinkedHashMap<>();
+        response.put("error", true);
+        Connection conexionBD = ConnectionDB.obtainConnection();
+        if(conexionBD != null){
+            try {
+                String query = "UPDATE cuento SET completado = 1 WHERE id = ?";
+                PreparedStatement preparedStatement = conexionBD.prepareStatement(query);
+                preparedStatement.setInt(1, idTale);
+                int rowsAffected = preparedStatement.executeUpdate();
+                
+                if(rowsAffected > 0){
+                    response.put("error", false);
+                    response.put("message", "Tale completed");
+                }else{
+                    response.put("message", "Something happened while trying to mark the tale as completed.");
+                }
+                conexionBD.close();
+            } catch (SQLException sqlex) {
+                response.put("message", "Error: " + sqlex.getMessage());
+            }
+        }else{
+            response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
+        }
+        return response;
     }
     
 }
