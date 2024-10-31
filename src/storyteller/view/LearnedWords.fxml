@@ -9,6 +9,7 @@
 
 
 <AnchorPane id="AnchorPane" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #FFCBBA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="storyteller.controller.LearnedWordsController">
+>>>>>>> f6a20a1547d47cd6b3cad4eed0b7f381b6e9604f
    <children>
       <AnchorPane prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
       <Text layoutX="68.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regresar">
@@ -28,39 +29,5 @@
           <TableColumn fx:id="colEnglish" prefWidth="364.0" text="Inglés" />
         </columns>
       </TableView>
-      <Pane layoutX="1036.0" layoutY="160.0" prefHeight="288.0" prefWidth="371.0" style="-fx-background-color: #FFDABA;">
-         <children>
-            <Text fx:id="titleTxt1" layoutX="23.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palabras Aprendidas:" textAlignment="CENTER">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <Text fx:id="titleTxt11" layoutX="23.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuentos Leídos:" textAlignment="CENTER">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <Text fx:id="titleTxt12" layoutX="23.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo Leyendo:" textAlignment="CENTER">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <Label fx:id="lbWordsLearned" layoutX="272.0" layoutY="50.0" prefHeight="38.0" prefWidth="77.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbStoriesRead" layoutX="213.0" layoutY="126.0" prefHeight="38.0" prefWidth="77.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbTimeReading" layoutX="234.0" layoutY="201.0" prefHeight="38.0" prefWidth="77.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
    </children>
 </AnchorPane>
