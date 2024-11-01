@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Storyteller" company="uv" webLink="http://" view-date="2024-10-06" view-index="0" gantt-divider-location="554" resource-divider-location="300" version="3.3.3309" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Storyteller" company="uv" webLink="http://" view-date="2024-09-29" view-index="0" gantt-divider-location="562" resource-divider-location="300" version="3.3.3309" locale="en_US">
     <description/>
     <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="180" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="86" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="70" order="2"/>
-        <field id="tpd10" name="Id." width="34" order="3"/>
-        <field id="tpd7" name="Progreso" width="54" order="4"/>
-        <field id="tpd8" name="Coordinador" width="115" order="5"/>
+        <field id="tpd3" name="Name" width="213" order="0"/>
+        <field id="tpd4" name="Begin date" width="76" order="1"/>
+        <field id="tpd5" name="End date" width="72" order="2"/>
+        <field id="tpd10" name="ID" width="20" order="3"/>
+        <field id="tpd7" name="Completion" width="53" order="4"/>
+        <field id="tpd8" name="Coordinator" width="112" order="5"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
         <option id="filter.inProgressTodayTasks" value="false"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nombre" width="210" order="0"/>
-        <field id="1" name="Función" width="86" order="1"/>
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
     </view>
     <!-- -->
     <calendars base-id="mx">
@@ -85,8 +85,8 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="42" uid="f744587a5e50460786951edb183b5061" name="Storyteller" meeting="false" start="2024-09-02" duration="50" complete="50" expand="true">
-            <task id="43" uid="70480f77b7b54f4f98b5dc59972486f1" name="Administración" meeting="false" start="2024-09-02" duration="50" complete="42" expand="true">
+        <task id="42" uid="f744587a5e50460786951edb183b5061" name="Storyteller" meeting="false" start="2024-09-02" duration="50" complete="70" expand="true">
+            <task id="43" uid="70480f77b7b54f4f98b5dc59972486f1" name="Administración" meeting="false" start="2024-09-02" duration="50" complete="65" expand="true">
                 <task id="44" uid="b13a1d7be3f1492c9488077b5b07cace" name="Definición" meeting="false" start="2024-09-02" duration="5" complete="100" expand="true">
                     <depend id="45" type="2" difference="0" hardness="Strong"/>
                     <depend id="49" type="2" difference="0" hardness="Strong"/>
@@ -97,7 +97,7 @@
                     <depend id="50" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="50" uid="792c403db7464b03aeebe8efb76e94a9" name="Plan de trabajo" meeting="true" start="2024-09-30" duration="0" complete="100" expand="true"/>
-                <task id="46" uid="2ce8215cda994a98aea45418b6af4230" name="Ejecución" meeting="false" start="2024-09-30" duration="25" complete="25" expand="true">
+                <task id="46" uid="2ce8215cda994a98aea45418b6af4230" name="Ejecución" meeting="false" start="2024-09-30" duration="25" complete="70" expand="true">
                     <depend id="47" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="47" uid="2ef688c97c8e44b1850186d57fcdcbc2" name="Cierre" meeting="false" start="2024-11-12" duration="10" complete="0" expand="true"/>
@@ -146,7 +146,6 @@
                 <task id="15" uid="9657ea6554244bb6ac266cfe189ed769" name="Codificación de interfaces gráficas" meeting="false" start="2024-10-14" duration="2" complete="100" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                 </task>
-<<<<<<< HEAD
                 <task id="16" uid="0e403bec074f45c49b88483090ead3eb" name="Codificación de funcionalidad" meeting="false" start="2024-10-14" duration="2" complete="100" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                 </task>
@@ -155,35 +154,35 @@
                 </task>
                 <task id="18" uid="b8a51bbe883146ebb7122d6912791336" name="Corrección de errores" meeting="false" start="2024-10-16" duration="2" complete="100" expand="true"/>
             </task>
-            <task id="37" uid="8e25b82070214e1694907be6a776e64f" name="Primer caso de uso funcional" meeting="true" start="2024-10-21" duration="0" complete="100" expand="true"/>
-            <task id="19" uid="8cf24882cab14cf1a5699682f5df6bee" name="Segundo caso de uso" meeting="false" start="2024-10-21" duration="4" complete="0" expand="true">
+            <task id="37" uid="8e25b82070214e1694907be6a776e64f" name="Primer caso de uso funcional" meeting="true" start="2024-10-21" duration="0" complete="0" expand="true"/>
+            <task id="19" uid="8cf24882cab14cf1a5699682f5df6bee" name="Segundo caso de uso" meeting="false" start="2024-10-21" duration="4" complete="71" expand="true">
                 <depend id="29" type="2" difference="0" hardness="Strong"/>
                 <depend id="38" type="2" difference="0" hardness="Strong"/>
-                <task id="20" uid="15c4495627354daea05f81affa1d2362" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="0" expand="true">
+                <task id="20" uid="15c4495627354daea05f81affa1d2362" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="100" expand="true">
                     <depend id="22" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="21" uid="e94fecad8eab42639ccc33f4e43bfdf8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="0" expand="true">
+                <task id="21" uid="e94fecad8eab42639ccc33f4e43bfdf8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-21" duration="2" complete="100" expand="true">
                     <depend id="22" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="22" uid="4c1a3064a85741e0a587e6ee3200e3f8" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-23" duration="1" complete="0" expand="true">
+                <task id="22" uid="4c1a3064a85741e0a587e6ee3200e3f8" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-23" duration="1" complete="100" expand="true">
                     <depend id="23" type="1" difference="0" hardness="Strong"/>
                 </task>
                 <task id="23" uid="872effc5437245c2bdfb47b957385156" name="Corrección de errores" color="#8cb6ce" meeting="false" start="2024-10-23" duration="2" complete="0" expand="true"/>
             </task>
             <task id="38" uid="8a42eda4546c43b782b0b724e3249353" name="Segundo caso de uso funcional" meeting="true" start="2024-10-28" duration="0" complete="0" expand="true"/>
-            <task id="24" uid="9d2e2d88acad4e62b4a7a79a5fe742a1" name="Tercer caso de uso" meeting="false" start="2024-10-28" duration="4" complete="0" expand="true">
+            <task id="24" uid="9d2e2d88acad4e62b4a7a79a5fe742a1" name="Tercer caso de uso" meeting="false" start="2024-10-28" duration="4" complete="82" expand="true">
                 <depend id="29" type="2" difference="0" hardness="Strong"/>
                 <depend id="39" type="2" difference="0" hardness="Strong"/>
-                <task id="25" uid="779ca7516aa34c84bcb0a1a3c0c746d4" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="0" expand="true">
+                <task id="25" uid="779ca7516aa34c84bcb0a1a3c0c746d4" name="Codificación de interfaces gráficas" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="100" expand="true">
                     <depend id="27" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="26" uid="ba232ca8537b4b42ab6b08155139b3a8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="0" expand="true">
+                <task id="26" uid="ba232ca8537b4b42ab6b08155139b3a8" name="Codificación de funcionalidad" color="#8cb6ce" meeting="false" start="2024-10-28" duration="2" complete="100" expand="true">
                     <depend id="27" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="27" uid="967f0030bfaa453b874237c6589a0ec9" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-30" duration="1" complete="0" expand="true">
+                <task id="27" uid="967f0030bfaa453b874237c6589a0ec9" name="Realización de pruebas" color="#8cb6ce" meeting="false" start="2024-10-30" duration="1" complete="80" expand="true">
                     <depend id="28" type="1" difference="0" hardness="Strong"/>
                 </task>
-                <task id="28" uid="43c66df8322841b89f56224f2cf8b2b3" name="Corrección de errores" color="#8cb6ce" meeting="false" start="2024-10-30" duration="2" complete="0" expand="true"/>
+                <task id="28" uid="43c66df8322841b89f56224f2cf8b2b3" name="Corrección de errores" color="#8cb6ce" meeting="false" start="2024-10-30" duration="2" complete="50" expand="true"/>
             </task>
             <task id="39" uid="b58db776280e4cb58afd1650d475e952" name="Tercer caso de uso funcional" meeting="true" start="2024-11-04" duration="0" complete="0" expand="true"/>
             <task id="29" uid="0c180940609a4062937d0ff27013c45b" name="Pruebas de integración" meeting="false" start="2024-11-04" duration="4" complete="0" expand="true">
