@@ -1,5 +1,6 @@
 package storyteller.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -55,7 +56,7 @@ public class ReadTale {
                 break;
 
             case 2:
-                translatedTale = tale.getSpanishText().replace(englishWord, spanishWord);
+                translatedTale = tale.getSpanishText();
                 break;
 
             default:
@@ -72,6 +73,7 @@ public class ReadTale {
 
         if (correctAnswer.equals(userAnswer)) {
             Utils.showSimpleAlert("Felicidades", "Respuesta correcta, has completado el cuento :D", Alert.AlertType.CONFIRMATION);
+            setTaleCompleted(tale.getId());
             goBack();
         }
         else {
@@ -85,19 +87,13 @@ public class ReadTale {
     }
 
     @FXML
-    private void btnClickGoBack(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnClickAccept(ActionEvent event) {
-    }
-
-    @FXML
     private void btnClickSpanish(ActionEvent event) {
+        translateTale(2);
     }
 
     @FXML
     private void btnClickEnglish(ActionEvent event) {
+        translateTale(1);
     }
     
     public static HashMap<String, Object> setTaleCompleted(int idTale){

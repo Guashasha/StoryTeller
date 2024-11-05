@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,11 +9,7 @@
    <children>
       <AnchorPane prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
       <AnchorPane layoutY="954.0" prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
-<<<<<<< HEAD
-      <Button fx:id="goBackBtn" layoutX="68.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnClickGoBack" text="Button" />
-=======
       <Button fx:id="goBackBtn" layoutX="68.0" layoutY="94.0" mnemonicParsing="false" onAction="#goBack" text="Button" />
->>>>>>> f6a20a1547d47cd6b3cad4eed0b7f381b6e9604f
       <Text layoutX="68.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regresar">
          <font>
             <Font size="20.0" />
@@ -44,11 +39,7 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-<<<<<<< HEAD
-                  <Button fx:id="acceptBtn" mnemonicParsing="false" onAction="#btnClickAccept" text="Aceptar">
-=======
                   <Button fx:id="acceptBtn" mnemonicParsing="false" onAction="#answerQuestion" text="Aceptar">
->>>>>>> f6a20a1547d47cd6b3cad4eed0b7f381b6e9604f
                      <font>
                         <Font size="20.0" />
                      </font>
