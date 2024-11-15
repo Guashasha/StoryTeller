@@ -7,7 +7,8 @@ package storyteller.model.pojo;
 public class Question {
     private String spanishQuestion;
     private String englishQuestion;
-    private int answer;
+    private Word answer;
+    private int answered;
 
     public String getSpanishQuestion() {
         return spanishQuestion;
@@ -25,12 +26,16 @@ public class Question {
         this.englishQuestion = englishQuestion;
     }
 
-    public int getAnswer() {
-        return answer;
+    public Word getQuestionAnswer() {return answer;}
+
+    public void SetQuestionAnswer(Word answer) { this.answer = answer;}
+
+    public int isAnswered() {
+        return answered;
     }
 
-    public void setAnswer(int answer) {
-        this.answer = answer;
+    public void setIsAnswered(int answered) {
+        this.answered = answered;
     }
     
     

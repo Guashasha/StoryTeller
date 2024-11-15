@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import storyteller.controller.StartController;
 
 /**
  *
@@ -18,10 +19,13 @@ public class Storyteller extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLPrueba.fxml"));
-        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLPrueba.fxml"));
+        Parent root = loader.load();
+
+        StartController controller = loader.getController();
+        controller.setStage(stage);
+
         Scene scene = new Scene(root);
-        
         stage.setScene(scene);
         stage.show();
     }

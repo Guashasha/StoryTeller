@@ -12,12 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import storyteller.model.pojo.Tale;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import storyteller.model.ConnectionDB;
+import storyteller.model.pojo.Question;
 import storyteller.model.pojo.State;
+import storyteller.model.pojo.Word;
 
 public class StartController {
     @FXML
@@ -28,14 +29,18 @@ public class StartController {
     private ArrayList<Tale> tales;
     private Stage stage;
 
-    public void initialize(Stage stage) {
-        this.stage = stage;
+    public void initialize() {
         obtainTales();
+        configureVBox();
         generateTaleButtons();
     }
-    
-    private void obtainTales(){
-        tales = (ArrayList<Tale>)getTales().get("tales");
+
+    private void obtainTales() {
+        tales = (ArrayList<Tale>) getTales().get("tales");
+    }
+
+    private void configureVBox() {
+        talesVBox.setSpacing(15);
     }
 
     private void generateTaleButtons() {
@@ -43,34 +48,43 @@ public class StartController {
             Button button = new Button(tale.getTitle());
             button.setOnAction(e -> {
                 try {
-                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("ReadTale.fxml"));
-
+                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/ReadTale.fxml"));
                     Parent root = guiLoader.load();
+
+                    ReadTale readTaleController = guiLoader.getController();
+                    readTaleController.initialize(tale);
+
                     Scene scene = new Scene(root);
                     stage.setTitle(tale.getTitle());
                     stage.setScene(scene);
                     stage.show();
-                }
-                catch (Exception error) {
+                } catch (Exception error) {
                     error.printStackTrace();
                 }
             });
 
-            button.setStyle("");
+            button.setStyle(
+                "-fx-background-color: #FFB98D; " +
+                "-fx-border-radius: 8; " +
+                "-fx-background-radius: 9; " +
+                "-fx-border-color: #000000; " +
+                "-fx-border-width: 1; " +
+                "-fx-pref-width: 720px; " +
+                "-fx-pref-height: 60px; " +
+                "-fx-font-size: 18px;"
+            );
             talesVBox.getChildren().add(button);
         }
     }
+
 
     public void goToLearnedWords() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/storyteller/view/LearnedWords.fxml"));
             Parent root = loader.load();
-
             Scene scene = new Scene(root);
-
             Stage currentStage = (Stage) btnLearnedWords.getScene().getWindow();
             currentStage.close();
-
             Stage newStage = new Stage();
             newStage.setScene(scene);
             newStage.setTitle("Learned Words");
@@ -80,42 +94,67 @@ public class StartController {
         }
     }
 
-    
-    public static HashMap<String, Object> getTales(){
+    public static HashMap<String, Object> getTales() {
         HashMap<String, Object> response = new LinkedHashMap<>();
         response.put("error", true);
         Connection conexionBD = ConnectionDB.obtainConnection();
         ArrayList<Tale> tales = new ArrayList<>();
-        if(conexionBD != null){
+
+        if (conexionBD != null) {
             try {
-                //TODO sentencia sql de consulta
-                String consulta = "SELECT id, titulo, texto_espanol, completado FROM cuento";
-                PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
-                
-                ResultSet result = prepararSentencia.executeQuery();
-                
-                while(result.next()){
+                String taleQuery = "SELECT id, titulo, texto_espanol, completado FROM cuento";
+                PreparedStatement taleStatement = conexionBD.prepareStatement(taleQuery);
+                ResultSet taleResult = taleStatement.executeQuery();
+
+                while (taleResult.next()) {
                     Tale tale = new Tale();
-                    tale.setId(result.getInt("id"));
-                    tale.setTitle(result.getString("titulo"));
-                    tale.setSpanishText(result.getString("texto_espanol"));
-                    if(result.getInt("completado") == 0){
-                        tale.setState(State.PENDING);
-                    }else{
-                        tale.setState(State.COMPLETED);
+                    tale.setId(taleResult.getInt("id"));
+                    tale.setTitle(taleResult.getString("titulo"));
+                    tale.setSpanishText(taleResult.getString("texto_espanol"));
+                    tale.setState(taleResult.getInt("completado") == 0 ? State.PENDING : State.COMPLETED);
+
+                    String questionQuery = "SELECT pregunta_espanol, pregunta_ingles, respuesta, lenguaje_respuesta, contestada FROM pregunta WHERE id_cuento = ?";
+                    PreparedStatement questionStatement = conexionBD.prepareStatement(questionQuery);
+                    questionStatement.setInt(1, tale.getId());
+
+                    ResultSet questionResult = questionStatement.executeQuery();
+
+                    if (questionResult.next()) {
+                        Question question = new Question();
+                        question.setSpanishQuestion(questionResult.getString("pregunta_espanol"));
+                        question.setEnglishQuestion(questionResult.getString("pregunta_ingles"));
+
+                        Word answer = new Word();
+                        if ("espanol".equals(questionResult.getString("lenguaje_respuesta"))) {
+                            answer.setSpanishWord(questionResult.getString("respuesta"));
+                        } else {
+                            answer.setEnglishWord(questionResult.getString("respuesta"));
+                        }
+                        question.SetQuestionAnswer(answer);
+
+                        question.setIsAnswered(questionResult.getInt("contestada"));
+
+                        tale.setQuestion(question);
                     }
-                    
                     tales.add(tale);
+                    questionStatement.close();
                 }
+
                 response.put("error", false);
                 response.put("tales", tales);
                 conexionBD.close();
             } catch (SQLException sqlex) {
                 response.put("message", "Error: " + sqlex.getMessage());
             }
-        }else{
+        } else {
             response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
         }
         return response;
+    }
+
+
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 }

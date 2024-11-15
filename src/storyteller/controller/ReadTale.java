@@ -1,14 +1,25 @@
 package storyteller.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import storyteller.model.ConnectionDB;
 import storyteller.model.pojo.Tale;
 import storyteller.model.pojo.Word;
 import storyteller.utils.Utils;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.LinkedHashMap;
+import java.sql.SQLException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 public class ReadTale {
     @FXML
@@ -54,7 +65,7 @@ public class ReadTale {
                 break;
 
             case 2:
-                translatedTale = tale.getSpanishText().replace(englishWord, spanishWord);
+                translatedTale = tale.getSpanishText();
                 break;
 
             default:
@@ -71,6 +82,7 @@ public class ReadTale {
 
         if (correctAnswer.equals(userAnswer)) {
             Utils.showSimpleAlert("Felicidades", "Respuesta correcta, has completado el cuento :D", Alert.AlertType.CONFIRMATION);
+            setTaleCompleted(tale.getId());
             goBack();
         }
         else {
@@ -80,6 +92,60 @@ public class ReadTale {
 
     @FXML
     private void goBack() {
-        System.out.println("hola mundo");
+        Stage stage = (Stage) titleTxt.getScene().getWindow();
+        stage.close();
+        try {
+            FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/Start.fxml"));
+
+            Parent root = guiLoader.load();
+            StartController controller = guiLoader.getController();
+            controller.setStage(stage);
+            Scene scene = new Scene(root);
+            stage.setTitle("Storyteller");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException ioException){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Hubo un problema");
+            alert.setContentText("Se presentó un problema inesperado, vuelve a intentarlo");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void btnClickSpanish(ActionEvent event) {
+        translateTale(2);
+    }
+
+    @FXML
+    private void btnClickEnglish(ActionEvent event) {
+        translateTale(1);
+    }
+    
+    public static HashMap<String, Object> setTaleCompleted(int idTale){
+        HashMap<String, Object> response = new LinkedHashMap<>();
+        response.put("error", true);
+        Connection conexionBD = ConnectionDB.obtainConnection();
+        if(conexionBD != null){
+            try {
+                String query = "UPDATE cuento SET completado = 1 WHERE id = ?";
+                PreparedStatement preparedStatement = conexionBD.prepareStatement(query);
+                preparedStatement.setInt(1, idTale);
+                int rowsAffected = preparedStatement.executeUpdate();
+                
+                if(rowsAffected > 0){
+                    response.put("error", false);
+                    response.put("message", "Tale completed");
+                }else{
+                    response.put("message", "Something happened while trying to mark the tale as completed.");
+                }
+                conexionBD.close();
+            } catch (SQLException sqlex) {
+                response.put("message", "Error: " + sqlex.getMessage());
+            }
+        }else{
+            response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
+        }
+        return response;
     }
 }

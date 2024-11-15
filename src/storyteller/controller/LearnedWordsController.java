@@ -1,41 +1,28 @@
 package storyteller.controller;
 
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Text;
 import storyteller.model.ConnectionDB;
 import storyteller.model.pojo.Question;
 import storyteller.utils.Utils;
-
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 import javafx.stage.Stage;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
@@ -43,7 +30,7 @@ import javafx.scene.text.Text;
 /**
  * FXML Controller class
  *
- * @author Usuario
+ * @author zaido
  */
 public class LearnedWordsController implements Initializable {
 
@@ -107,5 +94,21 @@ public class LearnedWordsController implements Initializable {
     private void btnClickGoBack(ActionEvent event) {
         Stage stage = (Stage) titleTxt.getScene().getWindow();
         stage.close();
+        try {
+            FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/Start.fxml"));
+
+            Parent root = guiLoader.load();
+            StartController controller = guiLoader.getController();
+            controller.setStage(stage);
+            Scene scene = new Scene(root);
+            stage.setTitle("Storyteller");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException ioException){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Hubo un problema");
+            alert.setContentText("Se presentó un problema inesperado, vuelve a intentarlo");
+            alert.showAndWait();
+        }
     }
 }
