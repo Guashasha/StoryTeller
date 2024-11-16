@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import storyteller.model.pojo.Tale;
@@ -25,6 +27,8 @@ public class StartController {
     private Button btnLearnedWords;
     @FXML
     private VBox talesVBox;
+    @FXML
+    private ImageView logoImageView;
 
     private ArrayList<Tale> tales;
     private Stage stage;
@@ -33,6 +37,7 @@ public class StartController {
         obtainTales();
         configureVBox();
         generateTaleButtons();
+        logoImageView.setImage(new Image("/resources/logo.png"));
     }
 
     private void obtainTales() {
