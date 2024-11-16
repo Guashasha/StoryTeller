@@ -3,9 +3,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.application.Application;
-import storyteller.controller.StartController;
 
-public class Main extends Application {
+public class Storyteller extends Application {
     public static void main(String[] args) {
         launch(args);
     }
@@ -13,11 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader guiLoader = new FXMLLoader(getClass().getClassLoader().getResource("src/storyteller/view/Start.fxml"));
-
-            Parent root = guiLoader.load();
-            StartController controller = guiLoader.getController();
-            controller.setStage(stage);
+            Parent root = FXMLLoader.load(getClass().getResource("storyteller/view/Start.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("Storyteller");
             stage.setScene(scene);
