@@ -28,7 +28,7 @@ CREATE TABLE `cuento` (
   `texto_espanol` mediumtext NOT NULL,
   `completado` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `palabra` (
   PRIMARY KEY (`id`),
   KEY `id_cuento` (`id_cuento`),
   CONSTRAINT `palabra_ibfk_1` FOREIGN KEY (`id_cuento`) REFERENCES `cuento` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `pregunta` (
   PRIMARY KEY (`id`),
   KEY `id_cuento` (`id_cuento`),
   CONSTRAINT `pregunta_ibfk_1` FOREIGN KEY (`id_cuento`) REFERENCES `cuento` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
