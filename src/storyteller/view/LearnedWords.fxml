@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #FFCBBA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="storyteller.controller.LearnedWordsController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: #FFCBBA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="storyteller.controller.LearnedWordsController">
    <children>
-      <AnchorPane prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
-      <Text layoutX="68.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regresar">
+      <AnchorPane prefHeight="70.0" prefWidth="1024.0" style="-fx-background-color: #F88965;" />
+      <Text layoutX="52.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regresar">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button fx:id="goBackBtn" layoutX="68.0" layoutY="93.0" mnemonicParsing="false" onAction="#btnClickGoBack" text="Button" />
-      <Text fx:id="titleTxt" layoutX="256.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palabras Aprendidas" textAlignment="CENTER">
+      <Text fx:id="titleTxt" layoutX="281.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palabras Aprendidas" textAlignment="CENTER">
          <font>
             <Font size="56.0" />
          </font>
       </Text>
-      <TableView fx:id="tvWordsLearned" layoutX="256.0" layoutY="160.0" prefHeight="839.0" prefWidth="738.0">
+      <TableView fx:id="tvWordsLearned" layoutX="160.0" layoutY="160.0" prefHeight="500.0" prefWidth="738.0">
         <columns>
           <TableColumn fx:id="colSpanish" prefWidth="373.0" text="Español" />
           <TableColumn fx:id="colEnglish" prefWidth="364.0" text="Inglés" />
         </columns>
       </TableView>
+      <ImageView fitHeight="51.0" fitWidth="56.0" layoutX="50.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#btnClickGoBack">
+         <image>
+            <Image url="@../../resources/image-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

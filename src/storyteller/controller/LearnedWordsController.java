@@ -25,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 /**
@@ -91,8 +92,8 @@ public class LearnedWordsController implements Initializable {
     }
 
     @FXML
-    private void btnClickGoBack(ActionEvent event) {
-        Stage stage = (Stage) titleTxt.getScene().getWindow();
+    private void btnClickGoBack(MouseEvent event) {
+        Stage stage = (Stage) this.titleTxt.getScene().getWindow();
         stage.close();
         try {
             FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/Start.fxml"));
