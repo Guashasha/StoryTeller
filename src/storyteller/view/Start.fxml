@@ -7,30 +7,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #FFCBBA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="storyteller.controller.StartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: #FFCBBA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="storyteller.controller.StartController">
    <children>
-      <AnchorPane prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
-      <AnchorPane layoutY="954.0" prefHeight="70.0" prefWidth="1440.0" style="-fx-background-color: #F88965;" />
-      <Button fx:id="btnLearnedWords" layoutX="234.0" layoutY="581.0" mnemonicParsing="false" onAction="#goToLearnedWords" style="-fx-background-color: #FFB98D; -fx-border-radius: 8; -fx-background-radius: 9; -fx-border-color: #000000; -fx-border-width: 1;" text="Palabras aprendidas">
+      <AnchorPane prefHeight="70.0" prefWidth="1024.0" style="-fx-background-color: #F88965;" />
+      <AnchorPane layoutY="655.0" prefHeight="70.0" prefWidth="1024.0" style="-fx-background-color: #F88965;" />
+      <Button fx:id="btnLearnedWords" layoutX="108.0" layoutY="586.0" mnemonicParsing="false" onAction="#goToLearnedWords" style="-fx-background-color: #FFB98D; -fx-border-radius: 8; -fx-background-radius: 9; -fx-border-color: #000000; -fx-border-width: 1;" text="Palabras aprendidas">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="600.0" layoutY="142.0" prefHeight="730.0" prefWidth="804.0" style="-fx-background-color: #FFDABA;">
+      <AnchorPane layoutX="442.0" layoutY="118.0" prefHeight="518.0" prefWidth="550.0" style="-fx-background-color: #FFDABA;">
          <children>
             <Label layoutX="32.0" layoutY="33.0" text="Selecciona un cuento para leer">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <VBox fx:id="talesVBox" layoutX="20.0" layoutY="156.0" maxHeight="560.0" maxWidth="765.0" minHeight="560.0" minWidth="765.0" prefHeight="560.0" prefWidth="765.0" style="-fx-background-color: #FFDABA;" />
-            <Button layoutX="710.0" layoutY="101.0" mnemonicParsing="false" style="-fx-background-color: FFB98D;" text="Filtro">
+            <VBox fx:id="talesVBox" layoutX="32.0" layoutY="167.0" maxHeight="560.0" maxWidth="765.0" minHeight="286.0" minWidth="500.0" prefHeight="338.0" prefWidth="500.0" style="-fx-background-color: #FFDABA;" />
+            <Button layoutX="453.0" layoutY="100.0" mnemonicParsing="false" style="-fx-background-color: FFB98D;" text="Filtro">
                <font>
                   <Font size="20.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <ImageView fx:id="logoImageView" fitHeight="150.0" fitWidth="200.0" layoutX="245.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="leavesImageView" fitHeight="150.0" fitWidth="200.0" layoutX="255.0" layoutY="749.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logoImageView" fitHeight="150.0" fitWidth="200.0" layoutX="83.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="leavesImageView" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="728.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

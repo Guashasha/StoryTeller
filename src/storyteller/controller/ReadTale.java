@@ -41,7 +41,6 @@ public class ReadTale {
     private Tale tale;
 
     public void initialize(Tale tale) {
-        this.stage = stage;
         this.tale = tale;
         this.titleTxt.setText(tale.getTitle());
         this.contentTxt.setText(tale.getSpanishText());
