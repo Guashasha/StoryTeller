@@ -62,10 +62,12 @@ public class ReadTale {
         switch (language) {
             case 1:
                 translatedTale = tale.getSpanishText().replace(spanishWord, englishWord);
+                questionTxt.setText(tale.getQuestion().getEnglishQuestion());
                 break;
 
             case 2:
                 translatedTale = tale.getSpanishText();
+                questionTxt.setText(tale.getQuestion().getSpanishQuestion());
                 break;
 
             default:
@@ -77,7 +79,7 @@ public class ReadTale {
 
     @FXML
     private void answerQuestion() {
-        String correctAnswer = tale.getQuestion().getQuestionAnswer().getEnglishWord();
+        String correctAnswer = tale.getQuestion().getQuestionAnswer().getSpanishWord();
         String userAnswer = answerTf.getText().trim();
 
         if (correctAnswer.equals(userAnswer)) {
@@ -122,9 +124,7 @@ public class ReadTale {
         translateTale(1);
     }
     
-    public static HashMap<String, Object> setTaleCompleted(int idTale){
-        HashMap<String, Object> response = new LinkedHashMap<>();
-        response.put("error", true);
+    public void setTaleCompleted(int idTale){
         Connection conexionBD = ConnectionDB.obtainConnection();
         if(conexionBD != null){
             try {
@@ -134,18 +134,13 @@ public class ReadTale {
                 int rowsAffected = preparedStatement.executeUpdate();
                 
                 if(rowsAffected > 0){
-                    response.put("error", false);
-                    response.put("message", "Tale completed");
-                }else{
-                    response.put("message", "Something happened while trying to mark the tale as completed.");
+                    System.out.println("Cuento marcado como completado");
                 }
+
                 conexionBD.close();
             } catch (SQLException sqlex) {
-                response.put("message", "Error: " + sqlex.getMessage());
+                System.err.println("Error: " + sqlex.getMessage());
             }
-        }else{
-            response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
         }
-        return response;
     }
 }

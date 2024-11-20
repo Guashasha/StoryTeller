@@ -34,14 +34,10 @@ public class StartController {
     private Stage stage;
 
     public void initialize() {
-        obtainTales();
+        getTales();
         configureVBox();
         generateTaleButtons();
         logoImageView.setImage(new Image("/resources/logo.png"));
-    }
-
-    private void obtainTales() {
-        tales = (ArrayList<Tale>) getTales().get("tales");
     }
 
     private void configureVBox() {
@@ -53,7 +49,7 @@ public class StartController {
             Button button = new Button(tale.getTitle());
             button.setOnAction(e -> {
                 try {
-                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/ReadTale.fxml"));
+                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("storyteller/view/ReadTale.fxml"));
                     Parent root = guiLoader.load();
 
                     ReadTale readTaleController = guiLoader.getController();
@@ -99,16 +95,13 @@ public class StartController {
         }
     }
 
-    public static HashMap<String, Object> getTales() {
-        HashMap<String, Object> response = new LinkedHashMap<>();
-        response.put("error", true);
+    public void getTales() {
         Connection conexionBD = ConnectionDB.obtainConnection();
-        ArrayList<Tale> tales = new ArrayList<>();
 
         if (conexionBD != null) {
             try {
-                String taleQuery = "SELECT id, titulo, texto_espanol, completado FROM cuento";
-                PreparedStatement taleStatement = conexionBD.prepareStatement(taleQuery);
+                String query = "SELECT cuento.id, titulo, texto_espanol, completado, contestada, pregunta español, pregunta ingles, palabra_espanol, palabra_ingles FROM cuento, pregunta, palabra where cuento.id=pregunta.id_cuento and cuento.id=palabra.id_cuento";
+                PreparedStatement taleStatement = conexionBD.prepareStatement(query);
                 ResultSet taleResult = taleStatement.executeQuery();
 
                 while (taleResult.next()) {
@@ -118,46 +111,30 @@ public class StartController {
                     tale.setSpanishText(taleResult.getString("texto_espanol"));
                     tale.setState(taleResult.getInt("completado") == 0 ? State.PENDING : State.COMPLETED);
 
-                    String questionQuery = "SELECT pregunta_espanol, pregunta_ingles, respuesta, lenguaje_respuesta, contestada FROM pregunta WHERE id_cuento = ?";
-                    PreparedStatement questionStatement = conexionBD.prepareStatement(questionQuery);
-                    questionStatement.setInt(1, tale.getId());
+                    Question question = new Question();
+                    question.setSpanishQuestion(taleResult.getString("pregunta_espanol"));
+                    question.setEnglishQuestion(taleResult.getString("pregunta_ingles"));
 
-                    ResultSet questionResult = questionStatement.executeQuery();
+                    Word answer = new Word();
+                    answer.setSpanishWord(taleResult.getString("palabra_espanol"));
+                    answer.setEnglishWord(taleResult.getString("palabra_espanol"));
+                    question.SetQuestionAnswer(answer);
 
-                    if (questionResult.next()) {
-                        Question question = new Question();
-                        question.setSpanishQuestion(questionResult.getString("pregunta_espanol"));
-                        question.setEnglishQuestion(questionResult.getString("pregunta_ingles"));
+                    question.setIsAnswered(taleResult.getInt("contestada"));
 
-                        Word answer = new Word();
-                        if ("espanol".equals(questionResult.getString("lenguaje_respuesta"))) {
-                            answer.setSpanishWord(questionResult.getString("respuesta"));
-                        } else {
-                            answer.setEnglishWord(questionResult.getString("respuesta"));
-                        }
-                        question.SetQuestionAnswer(answer);
-
-                        question.setIsAnswered(questionResult.getInt("contestada"));
-
-                        tale.setQuestion(question);
-                    }
+                    tale.setQuestion(question);
                     tales.add(tale);
-                    questionStatement.close();
                 }
 
-                response.put("error", false);
-                response.put("tales", tales);
                 conexionBD.close();
             } catch (SQLException sqlex) {
-                response.put("message", "Error: " + sqlex.getMessage());
+                System.err.println("Ocurrió un error al leer los cuentos del servidor");
             }
-        } else {
-            response.put("message", "Por el momento este cuento no se encuentra disponible, inténtalo de nuevo más tarde. ¡Puedes leer otro cuento mientras esperas!");
         }
-        return response;
+        else {
+            System.err.println("No se pudo conectar con los servicios de storyteller");
+        }
     }
-
-
 
     public void setStage(Stage stage) {
         this.stage = stage;

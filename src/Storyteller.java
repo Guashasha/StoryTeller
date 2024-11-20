@@ -12,7 +12,7 @@ public class Storyteller extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("storyteller/view/Start.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/storyteller/view/Start.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("Storyteller");
             stage.setScene(scene);
