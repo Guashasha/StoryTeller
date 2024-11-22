@@ -84,6 +84,7 @@ public class ReadTale {
         if (correctAnswer.equals(userAnswer)) {
             Utils.showSimpleAlert("Felicidades", "Respuesta correcta, has completado el cuento :D", Alert.AlertType.CONFIRMATION);
             setTaleCompleted(tale.getId());
+            setQuestionAnswered(tale.getId());
             goBack();
         }
         else {
@@ -134,6 +135,26 @@ public class ReadTale {
                 
                 if(rowsAffected > 0){
                     System.out.println("Cuento marcado como completado");
+                }
+
+                conexionBD.close();
+            } catch (SQLException sqlex) {
+                System.err.println("Error: " + sqlex.getMessage());
+            }
+        }
+    }
+
+    private void setQuestionAnswered(int idTale) {
+                Connection conexionBD = ConnectionDB.obtainConnection();
+        if(conexionBD != null){
+            try {
+                String query = "UPDATE pregunta SET contestada = 1 WHERE id_cuento = ?";
+                PreparedStatement preparedStatement = conexionBD.prepareStatement(query);
+                preparedStatement.setInt(1, idTale);
+                int rowsAffected = preparedStatement.executeUpdate();
+                
+                if(rowsAffected > 0){
+                    System.out.println("Pregunta marcada como completada");
                 }
 
                 conexionBD.close();

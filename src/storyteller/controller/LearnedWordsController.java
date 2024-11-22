@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -63,7 +62,11 @@ public class LearnedWordsController implements Initializable {
         Connection conexionBD = ConnectionDB.obtainConnection();
         if (conexionBD != null) {
             try {
-                String consulta = "SELECT pregunta_espanol, pregunta_ingles FROM pregunta WHERE contestada = 1";
+                String consulta = "SELECT palabra.palabra_espanol, palabra.palabra_ingles " +
+                                  "FROM palabra " +
+                                  "INNER JOIN pregunta ON palabra.id = pregunta.id " +
+                                  "WHERE pregunta.contestada = 1";
+
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
                 ResultSet result = prepararSentencia.executeQuery();
 
@@ -71,8 +74,8 @@ public class LearnedWordsController implements Initializable {
 
                 while (result.next()) {
                     Question question = new Question();
-                    question.setSpanishQuestion(result.getString("pregunta_espanol"));
-                    question.setEnglishQuestion(result.getString("pregunta_ingles"));
+                    question.setSpanishQuestion(result.getString("palabra_espanol"));
+                    question.setEnglishQuestion(result.getString("palabra_ingles"));
                     questions.add(question);
                 }
 
@@ -90,6 +93,7 @@ public class LearnedWordsController implements Initializable {
                     Alert.AlertType.WARNING);
         }
     }
+
 
     @FXML
     private void btnClickGoBack(MouseEvent event) {

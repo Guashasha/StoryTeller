@@ -15,8 +15,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import storyteller.model.pojo.Tale;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import storyteller.model.ConnectionDB;
 import storyteller.model.pojo.Question;
 import storyteller.model.pojo.State;
@@ -30,7 +28,7 @@ public class StartController {
     @FXML
     private ImageView logoImageView;
 
-    private ArrayList<Tale> tales;
+    private ArrayList<Tale> tales = new ArrayList<>();
     private Stage stage;
 
     public void initialize() {
@@ -49,7 +47,7 @@ public class StartController {
             Button button = new Button(tale.getTitle());
             button.setOnAction(e -> {
                 try {
-                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("storyteller/view/ReadTale.fxml"));
+                    FXMLLoader guiLoader = new FXMLLoader(getClass().getResource("/storyteller/view/ReadTale.fxml"));
                     Parent root = guiLoader.load();
 
                     ReadTale readTaleController = guiLoader.getController();
@@ -100,7 +98,7 @@ public class StartController {
 
         if (conexionBD != null) {
             try {
-                String query = "SELECT cuento.id, titulo, texto_espanol, completado, contestada, pregunta español, pregunta ingles, palabra_espanol, palabra_ingles FROM cuento, pregunta, palabra where cuento.id=pregunta.id_cuento and cuento.id=palabra.id_cuento";
+                String query = "SELECT cuento.id, cuento.titulo, cuento.texto_espanol, cuento.completado, pregunta.contestada, pregunta.pregunta_espanol, pregunta.pregunta_ingles, palabra.palabra_espanol, palabra.palabra_ingles FROM cuento LEFT JOIN pregunta ON cuento.id = pregunta.id_cuento LEFT JOIN palabra ON cuento.id = palabra.id_cuento";
                 PreparedStatement taleStatement = conexionBD.prepareStatement(query);
                 ResultSet taleResult = taleStatement.executeQuery();
 
@@ -129,6 +127,9 @@ public class StartController {
                 conexionBD.close();
             } catch (SQLException sqlex) {
                 System.err.println("Ocurrió un error al leer los cuentos del servidor");
+                System.err.println(sqlex.getMessage());
+            } catch (Exception exception){
+                System.err.println(exception.getMessage());
             }
         }
         else {
